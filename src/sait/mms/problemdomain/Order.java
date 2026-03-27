@@ -1,13 +1,15 @@
+import java.util.ArrayList;
+
 public class Order {
-    private int ISBN;
     private int customerID;
     private int orderID;
     private String orderDate;
     private String dueDate;
+    private ArrayList<Book> books;
 
     // Constructor
-    public Order(int ISBN, int customerID, int orderID, String orderDate, String dueDate) {
-        this.ISBN = ISBN;
+    public Order(ArrayList<Book> books, int customerID, int orderID, String orderDate, String dueDate) {
+        this.books = books;
         this.customerID = customerID;
         this.orderID = orderID;
         this.orderDate = orderDate;
@@ -15,8 +17,8 @@ public class Order {
     }
 
     // Getters
-    public int getISBN() {
-        return ISBN;
+    public ArrayList<Book> getBooks() {
+        return books;
     }
     public int getCustomerID() {
         return customerID;
@@ -32,8 +34,8 @@ public class Order {
     }
 
     // Setters
-    public void setISBN(int ISBN) {
-        this.ISBN = ISBN;
+    public void setBooks(ArrayList<Book> books) {
+        this.books = books;
     }
     public void setCustomerID(int customerID) {
         this.customerID = customerID;
