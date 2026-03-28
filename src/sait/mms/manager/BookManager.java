@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import sait.mms.exceptions.BookNotFoundException;
+
 public class BookManager {
 
     private ArrayList<Book> bookList;
@@ -19,17 +21,22 @@ public class BookManager {
         }
     }
 
-    public Book searchBooks(int ISBN){
-        for(Book iter:bookList){
+    public Book searchBooks(int ISBN) throws BookNotFoundException{
+            for(Book iter:bookList){
             if(iter.getISBN()==ISBN)
                 return iter;
-        }
-
-        return null;//TODO: book not found exception
+            }
+            throw new BookNotFoundException("No book found with ISBN: "+ISBN);
     }
 
     public void updateBook(int ISBN){
-        Book select = searchBooks(ISBN);
+        Book select = null;
+        try {
+        select = searchBooks(ISBN);
+        } catch (BookNotFoundException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
         int choice = 50;
         do{
             System.out.println("What would you like to change:");
@@ -81,7 +88,13 @@ public class BookManager {
     }
 
     public void deleteBook(int ISBN){
-        Book select = searchBooks(ISBN);
+        Book select = null;
+        try {
+        select = searchBooks(ISBN);
+        } catch (BookNotFoundException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
         bookList.remove(select);
     }
 
