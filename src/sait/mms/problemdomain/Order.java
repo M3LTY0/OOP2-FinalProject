@@ -1,16 +1,16 @@
 import java.util.ArrayList;
 
 public class Order {
-    private int customerID;
+    private Customer customer;
     private int orderID;
     private String orderDate;
     private String dueDate;
     private ArrayList<Book> books;
 
     // Constructor
-    public Order(ArrayList<Book> books, int customerID, int orderID, String orderDate, String dueDate) {
+    public Order(ArrayList<Book> books, Customer customer, int orderID, String orderDate, String dueDate) {
         this.books = books;
-        this.customerID = customerID;
+        this.customer = customer;
         this.orderID = orderID;
         this.orderDate = orderDate;
         this.dueDate = dueDate;
@@ -20,8 +20,8 @@ public class Order {
     public ArrayList<Book> getBooks() {
         return books;
     }
-    public int getCustomerID() {
-        return customerID;
+    public Customer getCustomer() {
+        return customer;
     }
     public int getOrderID() {
         return orderID;
@@ -37,8 +37,8 @@ public class Order {
     public void setBooks(ArrayList<Book> books) {
         this.books = books;
     }
-    public void setCustomerID(int customerID) {
-        this.customerID = customerID;
+    public void setCustomerID(Customer customer) {
+        this.customer = customer;
     }
     public void setOrderID(int orderID) {
         this.orderID = orderID;

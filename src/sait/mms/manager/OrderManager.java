@@ -13,8 +13,9 @@ public class OrderManager {
     public Scanner input = new Scanner(System.in);
     DatabaseConn db = new DatabaseConn();
 
-    public Order createOrder(ArrayList<Book> books, int customerID, int orderID, String orderDate, String dueDate) {
-        Order newOrder = new Order(books, customerID, orderID, orderDate, dueDate);
+    // Updated to allow for Customer object rather than customerID attribute
+    public Order createOrder(ArrayList<Book> books, Customer customer, int orderID, String orderDate, String dueDate) {
+        Order newOrder = new Order(books, customer, orderID, orderDate, dueDate);
         orderList.add(newOrder);
         return newOrder;
     }
@@ -89,14 +90,14 @@ public class OrderManager {
             } else if (choice == 2) {
                 System.out.println("Please enter new value for customerID");
                 int newCustomerID = input.nextInt();
-                select.setCustomerID(newCustomerID);
+                select.setCustomerID(newCustomerID); // Needs to be updated for Customer object rather than customerID attribute
 
                 String sql = "UPDATE orders SET customerID = ? WHERE orderID = ?";
 
                 try {
                     PreparedStatement pst = db.prepared(sql);
                     ;
-                    pst.setInt(1, newCustomerID);
+                    pst.setInt(1, newCustomerID); // Needs to be updated for Customer object rather than customerID attribute
                     pst.setInt(2, orderID);
 
                     int count = db.updated(pst);
