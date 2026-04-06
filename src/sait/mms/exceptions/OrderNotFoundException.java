@@ -1,10 +1,6 @@
 package sait.mms.exceptions;
 
-public class OrderNotFoundException extends Exception {
-
-    public OrderNotFoundException() {
-
-    }
+public class OrderNotFoundException extends ManagerException {
 
     public OrderNotFoundException(String message) {
         super(message);
