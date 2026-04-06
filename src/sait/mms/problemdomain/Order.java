@@ -1,9 +1,12 @@
+import java.util.ArrayList;
 public class Order {
     private int customerID;
     private int orderID;
     private int ISBN;
     private String orderDate;
     private String dueDate;
+    ArrayList<Book> orderedBooks = new ArrayList<>();
+
 
     // Constructor
     public Order(int customerID, int orderID, int iSBN, String orderDate, String dueDate) {

@@ -6,7 +6,6 @@ import sait.mms.exceptions.OrderNotFoundException;
 public class OrderManager extends Manager<Order>{
 
     ArrayList<Order> orderList = db.getOrderList();
-    ArrayList<Book> orderedBooks = new ArrayList<>();
     BookManager bookM = new BookManager();
     CustomerManager customerM = new CustomerManager();
 
@@ -57,8 +56,8 @@ public class OrderManager extends Manager<Order>{
                 try {
                     Book oldBook = bookM.searchBooks(oldISBN);
                     Book newBook = bookM.searchBooks(newISBN);
-                    orderedBooks.remove(oldBook);
-                    orderedBooks.add(newBook);
+                    select.orderedBooks.remove(oldBook);
+                    select.orderedBooks.add(newBook);
                     select.setISBN(newISBN);
                 } catch (BookNotFoundException e) {
                     System.out.println(e.getMessage());
