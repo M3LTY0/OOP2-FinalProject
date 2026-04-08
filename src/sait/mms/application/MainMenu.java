@@ -100,7 +100,7 @@ public class MainMenu {
                     String address = input.nextLine();
 
                     System.out.print("Phone: ");         
-                    int phone = input.nextInt(); 
+                    String phone = input.nextLine(); 
                     
                     System.out.print("Email: ");         
                     String email = input.nextLine();

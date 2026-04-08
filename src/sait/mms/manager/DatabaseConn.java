@@ -146,7 +146,7 @@ public class DatabaseConn{
                     rs.getString("firstName"),
                     rs.getString("lastName"),
                     rs.getString("address"),
-                    rs.getInt("phone"),
+                    rs.getString("phone"),
                     rs.getString("email")
             ));
         }
@@ -156,7 +156,7 @@ public class DatabaseConn{
     return customers;
 }
 
-    public void addCustomersql(int customerID, String firstName, String lastName, String address, int phone, String email) {
+    public void addCustomersql(int customerID, String firstName, String lastName, String address, String phone, String email) {
         String sql = "INSERT INTO customers(customerID, firstName, lastName, address, phone, email) VALUES (?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = prepared(sql);
@@ -164,7 +164,7 @@ public class DatabaseConn{
             pst.setString(2, firstName);
             pst.setString(3, lastName);
             pst.setString(4, address);
-            pst.setInt(5, phone);
+            pst.setString(5, phone);
             pst.setString(6, email);
             int count = updated(pst);
             System.out.println(count + " row inserted");
@@ -173,14 +173,14 @@ public class DatabaseConn{
         }
     }
 
-    public void updateCustomersql(int customerID, String firstName, String lastName, String address, int phone, String email) {
+    public void updateCustomersql(int customerID, String firstName, String lastName, String address, String phone, String email) {
         String sql = "UPDATE customers SET firstName=?, lastName=?, address=?, phone=?, email=? WHERE customerID=?";
         try {
             PreparedStatement pst = prepared(sql);
             pst.setString(1, firstName);
             pst.setString(2, lastName);
             pst.setString(3, address);
-            pst.setInt(4, phone);
+            pst.setString(4, phone);
             pst.setString(5, email);
             pst.setInt(6, customerID);
             int count = updated(pst);

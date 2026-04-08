@@ -5,7 +5,7 @@ public class CustomerManager extends Manager<Customer>{
 
     ArrayList<Customer> customerList = db.getCustomerList();
 
-    public Customer addCustomer(int customerID, String firstName, String lastName, String address, int phone, String email) {
+    public Customer addCustomer(int customerID, String firstName, String lastName, String address, String phone, String email) {
         Customer newCustomer = new Customer(customerID, firstName, lastName, address, phone, email);
         customerList.add(newCustomer);
         db.addCustomersql(customerID, firstName, lastName, address, phone, email); 
@@ -64,7 +64,7 @@ public class CustomerManager extends Manager<Customer>{
                 select.setAddress(input.nextLine());
             } else if (choice == 5) {
                 System.out.println("Please enter new value for phone");
-                int newPhone = input.nextInt();
+                String newPhone = input.nextLine();
                 input.nextLine();
                 select.setPhone(newPhone);
             } else if (choice == 6) {
