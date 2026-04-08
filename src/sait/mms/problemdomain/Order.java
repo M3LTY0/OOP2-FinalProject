@@ -54,16 +54,8 @@ public class Order {
         this.dueDate = dueDate;
     }
 
-
-
     @Override
     public String toString() {
-        return "Order [customerID=" + customerID + ", orderID=" + orderID + ", ISBN=" + ISBN + ", orderDate="
-                + orderDate + ", dueDate=" + dueDate + "]";
+        return "Order [customerID=" + customerID + ", orderID=" + orderID + ", ISBN=" + ISBN + ", orderDate=" + orderDate + ", dueDate=" + dueDate + "]";
     }
-
-    
-
-
-
 }

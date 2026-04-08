@@ -16,7 +16,7 @@ public class BookManager extends Manager<Book>{
 
     public void displayBooks() {
         for (Book iter : bookList) {
-            iter.toString();
+            System.out.println(iter.toString());
         }
     }
 
