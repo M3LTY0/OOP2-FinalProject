@@ -14,7 +14,7 @@ public class CustomerManager extends Manager<Customer>{
 
     public void displayCustomers() {
         for (Customer iter : customerList) {
-            System.out.print(iter);
+            System.out.print(iter.toString());
         }
     }
 

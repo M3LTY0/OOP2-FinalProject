@@ -55,4 +55,9 @@ public class Customer {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        return "\n" + firstName + " " + lastName + " [ID: " + customerID + ", Address: " + address + ", Phone: " + phone + ", Email: " + email + "]";
+    }
 }
