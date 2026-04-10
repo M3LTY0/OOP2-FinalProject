@@ -3,11 +3,11 @@ public class Customer {
     private String firstName;
     private String lastName;
     private String address;
-    private int phone;
+    private String phone;
     private String email;
 
     // Constructor
-    public Customer(int customerID, String firstName, String lastName, String address, int phone, String email) {
+    public Customer(int customerID, String firstName, String lastName, String address, String phone, String email) {
         this.customerID = customerID;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -29,7 +29,7 @@ public class Customer {
     public String getAddress() {
         return address;
     }
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
     public String getEmail() {
@@ -49,10 +49,15 @@ public class Customer {
     public void setAddress(String address) {
         this.address = address;
     }
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "\n" + firstName + " " + lastName + " [ID: " + customerID + ", Address: " + address + ", Phone: " + phone + ", Email: " + email + "]";
     }
 }

@@ -1,30 +1,33 @@
 import java.util.ArrayList;
-
 public class Order {
     private Customer customer;
     private int orderID;
+    private int ISBN;
     private String orderDate;
     private String dueDate;
-    private ArrayList<Book> books;
+    ArrayList<Book> orderedBooks = new ArrayList<>();
+
 
     // Constructor
-    public Order(ArrayList<Book> books, Customer customer, int orderID, String orderDate, String dueDate) {
-        this.books = books;
-        this.customer = customer;
+    public Order(int customerID, int orderID, int ISBN, String orderDate, String dueDate) {
+        this.customerID = customerID;
         this.orderID = orderID;
+        this.ISBN = ISBN;
         this.orderDate = orderDate;
         this.dueDate = dueDate;
     }
 
+
+
     // Getters
-    public ArrayList<Book> getBooks() {
-        return books;
-    }
-    public Customer getCustomer() {
-        return customer;
+    public int getCustomerID() {
+        return customerID;
     }
     public int getOrderID() {
         return orderID;
+    }
+    public int getISBN() {
+        return ISBN;
     }
     public String getOrderDate() {
         return orderDate;
@@ -34,19 +37,25 @@ public class Order {
     }
 
     // Setters
-    public void setBooks(ArrayList<Book> books) {
-        this.books = books;
-    }
-    public void setCustomerID(Customer customer) {
-        this.customer = customer;
+
+    public void setCustomerID(int customerID) {
+        this.customerID = customerID;
     }
     public void setOrderID(int orderID) {
         this.orderID = orderID;
+    }
+    public void setISBN(int ISBN) {
+        this.ISBN = ISBN;
     }
     public void setOrderDate(String orderDate) {
         this.orderDate = orderDate;
     }
     public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Order [customerID=" + customerID + ", orderID=" + orderID + ", ISBN=" + ISBN + ", orderDate=" + orderDate + ", dueDate=" + dueDate + "]";
     }
 }
