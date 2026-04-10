@@ -162,7 +162,7 @@ public class MainMenu {
                     int cusID = input.nextInt(); 
                     
                     ArrayList<Order> orderList = orderM.orderList;
-                    int orderID = 1;
+                    int orderID = 1001;
                     for (Order o : orderList) {
                         orderID++;
                     }
