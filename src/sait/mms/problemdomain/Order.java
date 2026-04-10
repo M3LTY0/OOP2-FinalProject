@@ -9,10 +9,10 @@ public class Order {
 
 
     // Constructor
-    public Order(int customerID, int orderID, int iSBN, String orderDate, String dueDate) {
+    public Order(int customerID, int orderID, int ISBN, String orderDate, String dueDate) {
         this.customerID = customerID;
         this.orderID = orderID;
-        ISBN = iSBN;
+        this.ISBN = ISBN;
         this.orderDate = orderDate;
         this.dueDate = dueDate;
     }
@@ -44,8 +44,8 @@ public class Order {
     public void setOrderID(int orderID) {
         this.orderID = orderID;
     }
-    public void setISBN(int iSBN) {
-        ISBN = iSBN;
+    public void setISBN(int ISBN) {
+        this.ISBN = ISBN;
     }
     public void setOrderDate(String orderDate) {
         this.orderDate = orderDate;

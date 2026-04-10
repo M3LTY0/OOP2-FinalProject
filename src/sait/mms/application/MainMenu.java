@@ -1,4 +1,7 @@
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import sait.mms.exceptions.CustomerNotFoundException;
 
 public class MainMenu {
 
@@ -87,8 +90,12 @@ public class MainMenu {
 
             switch (choice) {
                 case 1:
-                    System.out.print("Customer ID: ");
-                    int cusID = input.nextInt(); 
+                    ArrayList<Customer> cusList = customerM.customerList;
+                    int cusID = 1;
+                    for (Customer c : cusList) {
+                        cusID++;
+                    }
+                    System.out.print("Customer ID is set");
                     
                     System.out.print("First Name: ");    
                     String firstName = input.nextLine();
@@ -154,8 +161,12 @@ public class MainMenu {
                     System.out.print("Customer ID: ");   
                     int cusID = input.nextInt(); 
                     
-                    System.out.print("Order ID: ");      
-                    int orderID = input.nextInt(); 
+                    ArrayList<Order> orderList = orderM.orderList;
+                    int orderID = 1;
+                    for (Order o : orderList) {
+                        orderID++;
+                    }
+                    System.out.print("Order ID is set");
                     
                     System.out.print("ISBN: ");          
                     int isbn = input.nextInt(); 
@@ -215,7 +226,6 @@ public class MainMenu {
                 case 3: orderMenu(); break;
                 case 0: 
                     bookM.db.disconnect();
-                    System.out.println("Goodbye!");
                     break;
                 default: System.out.println("Invalid option, try again.");
             }
