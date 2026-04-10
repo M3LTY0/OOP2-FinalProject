@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 public class Order {
-    private Customer customer;
+    private int customerID;
     private int orderID;
     private int ISBN;
     private String orderDate;
