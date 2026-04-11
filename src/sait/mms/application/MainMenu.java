@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import sait.mms.exceptions.CustomerNotFoundException;
-
 public class MainMenu {
 
     static Scanner input = new Scanner(System.in);
@@ -26,7 +24,8 @@ public class MainMenu {
             switch (choice) {
                 case 1:
                     System.out.print("ISBN: ");          
-                    int isbn = input.nextInt(); 
+                    int isbn = input.nextInt();
+                    input.nextLine();
                     
                     System.out.print("Title: ");         
                     String title = input.nextLine();
@@ -95,21 +94,22 @@ public class MainMenu {
                     for (Customer c : cusList) {
                         cusID++;
                     }
-                    System.out.print("Customer ID is set");
+                    System.out.println("Customer ID is set");
                     
-                    System.out.print("First Name: ");    
+                    System.out.print("First Name: ");
                     String firstName = input.nextLine();
+                    input.nextLine();
                     
-                    System.out.print("Last Name: ");     
+                    System.out.print("Last Name: ");
                     String lastName = input.nextLine();
 
-                    System.out.print("Address: ");       
+                    System.out.print("Address: ");
                     String address = input.nextLine();
 
-                    System.out.print("Phone: ");         
-                    String phone = input.nextLine(); 
+                    System.out.print("Phone: ");
+                    String phone = input.nextLine();
                     
-                    System.out.print("Email: ");         
+                    System.out.print("Email: ");
                     String email = input.nextLine();
                     
                     customerM.addCustomer(cusID, firstName, lastName, address, phone, email);
@@ -159,17 +159,19 @@ public class MainMenu {
             switch (choice) {
                 case 1:
                     System.out.print("Customer ID: ");   
-                    int cusID = input.nextInt(); 
+                    int cusID = input.nextInt();
+                    input.nextLine();
                     
                     ArrayList<Order> orderList = orderM.orderList;
                     int orderID = 1001;
                     for (Order o : orderList) {
                         orderID++;
                     }
-                    System.out.print("Order ID is set");
+                    System.out.println("Order ID is set");
                     
                     System.out.print("ISBN: ");          
-                    int isbn = input.nextInt(); 
+                    int isbn = input.nextInt();
+                    input.nextLine();
                     
                     System.out.print("Order Date: ");    
                     String orderDate = input.nextLine();
