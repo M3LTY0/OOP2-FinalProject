@@ -3,6 +3,10 @@ package manager;
 import java.sql.*;
 import java.util.ArrayList;
 
+import problemdomain.Book;
+import problemdomain.Customer;
+import problemdomain.Order;
+
 public class DatabaseConn{
 
     private Connection conn = null;

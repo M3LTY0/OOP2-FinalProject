@@ -8,7 +8,7 @@ public class Order {
     private int ISBN;
     private String orderDate;
     private String dueDate;
-    ArrayList<Book> orderedBooks = new ArrayList<>();
+    public ArrayList<Book> orderedBooks = new ArrayList<>();
 
 
     // Constructor
