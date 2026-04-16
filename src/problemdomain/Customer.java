@@ -1,0 +1,65 @@
+package problemdomain;
+
+public class Customer {
+    private int customerID;
+    private String firstName;
+    private String lastName;
+    private String address;
+    private String phone;
+    private String email;
+
+    // Constructor
+    public Customer(int customerID, String firstName, String lastName, String address, String phone, String email) {
+        this.customerID = customerID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+    }
+
+    // Getters
+    public int getCustomerID() {
+        return customerID;
+    }
+    public String getFirstName() {
+        return firstName;
+    }
+    public String getLastName() {
+        return lastName;
+    }
+    public String getAddress() {
+        return address;
+    }
+    public String getPhone() {
+        return phone;
+    }
+    public String getEmail() {
+        return email;
+    }
+
+    // Setters
+    public void setCustomerID(int customerID) {
+        this.customerID = customerID;
+    }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "\n" + firstName + " " + lastName + " [ID: " + customerID + ", Address: " + address + ", Phone: " + phone + ", Email: " + email + "]";
+    }
+}
