@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import exceptions.BookNotFoundException;
 import exceptions.CustomerNotFoundException;
 import exceptions.OrderNotFoundException;
+import problemdomain.Book;
+import problemdomain.Order;
 
 public class OrderManager extends Manager<Order>{
 
-    ArrayList<Order> orderList = db.getOrderList();
+    public ArrayList<Order> orderList = db.getOrderList();
     BookManager bookM = new BookManager();
     CustomerManager customerM = new CustomerManager();
 

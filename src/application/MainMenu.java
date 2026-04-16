@@ -3,6 +3,12 @@ package application;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import manager.BookManager;
+import manager.CustomerManager;
+import manager.OrderManager;
+import problemdomain.Customer;
+import problemdomain.Order;
+
 public class MainMenu {
 
     static Scanner input = new Scanner(System.in);
@@ -87,6 +93,7 @@ public class MainMenu {
             System.out.println("5: Delete Customer");
             System.out.println("0: Back");
             choice = input.nextInt();
+            input.nextLine();
             
 
             switch (choice) {
@@ -100,7 +107,6 @@ public class MainMenu {
                     
                     System.out.print("First Name: ");
                     String firstName = input.nextLine();
-                    input.nextLine();
                     
                     System.out.print("Last Name: ");
                     String lastName = input.nextLine();

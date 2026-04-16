@@ -2,6 +2,7 @@ package manager;
 
 import java.util.ArrayList;
 import exceptions.BookNotFoundException;
+import problemdomain.Book;
 
 public class BookManager extends Manager<Book>{
 
@@ -53,6 +54,7 @@ public class BookManager extends Manager<Book>{
 
             // TODO: user input error traps
             choice = input.nextInt();
+            input.nextLine();
             if (choice == 1) {
                 System.out.println("Please enter new value for ISBN");
                 int newISBN = input.nextInt();
