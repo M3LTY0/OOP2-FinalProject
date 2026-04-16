@@ -1,7 +1,7 @@
 import java.util.ArrayList;
-import sait.mms.exceptions.BookNotFoundException;
-import sait.mms.exceptions.CustomerNotFoundException;
-import sait.mms.exceptions.OrderNotFoundException;
+import exceptions.BookNotFoundException;
+import exceptions.CustomerNotFoundException;
+import exceptions.OrderNotFoundException;
 
 public class OrderManager extends Manager<Order>{
 

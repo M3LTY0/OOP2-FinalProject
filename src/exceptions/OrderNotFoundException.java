@@ -1,4 +1,4 @@
-package sait.mms.exceptions;
+package exceptions;
 
 public class OrderNotFoundException extends ManagerException {
 

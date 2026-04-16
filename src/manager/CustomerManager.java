@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import sait.mms.exceptions.CustomerNotFoundException;
+import exceptions.CustomerNotFoundException;
 
 public class CustomerManager extends Manager<Customer>{
 

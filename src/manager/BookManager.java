@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import sait.mms.exceptions.BookNotFoundException;
+import exceptions.BookNotFoundException;
 
 public class BookManager extends Manager<Book>{
 
