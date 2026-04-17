@@ -160,7 +160,7 @@ public class DatabaseConn{
         System.out.println("Error loading customers: " + e.getMessage());
     }
     return customers;
-}
+    }
 
     public void addCustomersql(int customerID, String firstName, String lastName, String address, String phone, String email) {
         String sql = "INSERT INTO customers(customerID, firstName, lastName, address, phone, email) VALUES (?, ?, ?, ?, ?, ?)";
@@ -211,24 +211,24 @@ public class DatabaseConn{
 
     //Order Stuff
     public ArrayList<Order> getOrderList() {
-    String sql = "SELECT * FROM orders";
-    try {
-        PreparedStatement pst = prepared(sql);
-        ResultSet rs = query(pst);
-        while (rs.next()) {
-            orders.add(new Order(
+    	String sql = "SELECT * FROM orders";
+    	try {
+    		PreparedStatement pst = prepared(sql);
+    		ResultSet rs = query(pst);
+    		while (rs.next()) {
+    			orders.add(new Order(
                     rs.getInt("customerID"),
                     rs.getInt("orderID"),
                     rs.getInt("ISBN"),
                     rs.getString("orderDate"),
                     rs.getString("dueDate")
             ));
-        }
-    } catch (SQLException e) {
+    		}
+    	} catch (SQLException e) {
         System.out.println("Error loading orders: " + e.getMessage());
+    	}
+    	return orders;
     }
-    return orders;
-}
 
     public void addOrdersql(int customerID, int orderID, int ISBN, String orderDate, String dueDate) {
         String sql = "INSERT INTO orders(customerID, orderID, ISBN, orderDate, dueDate) VALUES (?, ?, ?, ?, ?)";
@@ -263,16 +263,16 @@ public class DatabaseConn{
     }
 
     public void deleteOrdersql(int orderID) {
-    String sql = "DELETE FROM orders WHERE orderID=?";
-    try {
-        PreparedStatement pst = prepared(sql);
-        pst.setInt(1, orderID);
-        int count = updated(pst);
-        System.out.println(count + " row deleted");
-    } catch (SQLException e) {
-        System.out.println("Error deleting order: " + e.getMessage());
+    	String sql = "DELETE FROM orders WHERE orderID=?";
+    	try {
+    		PreparedStatement pst = prepared(sql);
+    		pst.setInt(1, orderID);
+    		int count = updated(pst);
+    		System.out.println(count + " row deleted");
+    	} catch (SQLException e) {
+    		System.out.println("Error deleting order: " + e.getMessage());
+    	}
     }
-}
 
 
 
